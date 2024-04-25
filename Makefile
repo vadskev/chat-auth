@@ -30,8 +30,7 @@ generate-user-api:
 	api/user_v1/user.proto
 
 build:
-	GOOS=linux GOARCH=amd64 go build -o service_linux cmd/grpc_server/main.go
+	GOOS=linux GOARCH=amd64 go build -o service_chat_auth_linux cmd/grpc_server/main.go
 
 copy-to-server:
-	scp service_linux root@62.113.105.146
-
+	scp service_chat_auth_linux root@62.113.105.146
