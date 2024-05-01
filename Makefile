@@ -16,7 +16,6 @@ get-deps:
 	go get -u google.golang.org/protobuf/cmd/protoc-gen-go
 	go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
-
 generate:
 	make generate-user-api
 
@@ -30,8 +29,5 @@ generate-user-api:
 	api/user_v1/user.proto
 
 build:
-	GOOS=linux GOARCH=amd64 go build -o service_linux cmd/grpc_server/main.go
-
-copy-to-server:
-	scp service_linux root@62.113.105.146
+	GOOS=linux GOARCH=amd64 go build -o bin/chat_auth cmd/grpc_server/main.go
 
